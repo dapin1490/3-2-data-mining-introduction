@@ -1,0 +1,540 @@
+C:\Users\Sungshin\anaconda3\python.exe F:/Sungshin/github/3-2-data-mining-introduction/weeks/week06/main.py
+df1
+                   A         B         C         D
+2019-07-01  0.557207 -0.798847  1.183877  0.005410
+2019-07-02 -1.075341 -0.686772  1.732791  1.467824
+2019-07-03 -0.241529  0.359115  0.382553 -0.691537
+2019-07-04  1.396015  2.010971  0.097260 -0.734243
+2019-07-05  0.805271  0.556231 -0.690053 -0.150408
+
+                   A         B         C         D
+2019-07-02 -1.075341 -0.686772  1.732791  1.467824
+2019-07-03 -0.241529  0.359115  0.382553 -0.691537
+2019-07-04  1.396015  2.010971  0.097260 -0.734243
+
+A    0.557207
+B   -0.798847
+C    1.183877
+D    0.005410
+Name: 2019-07-01 00:00:00, dtype: float64
+
+2019-07-01    0.557207
+2019-07-02   -1.075341
+2019-07-03   -0.241529
+2019-07-04    1.396015
+2019-07-05    0.805271
+Freq: D, Name: A, dtype: float64
+
+
+ser1
+a    1.229265
+b    0.134392
+c   -0.081106
+d   -1.433432
+dtype: float64
+
+0.13439207201149878
+
+-0.08110611399916398
+
+a    1.229265
+b    0.134392
+c    0.000000
+d   -1.433432
+dtype: float64
+
+a     1.229265
+b     0.134392
+c    30.000000
+d    30.000000
+dtype: float64
+
+----------------------------
+
+df2
+          A         B         C         D
+a -0.539496  0.382196  1.259751  0.344533
+b -0.389403  0.383852  1.146155 -0.162185
+c -0.512895  0.009457 -0.585158  1.186924
+d -0.758241  0.142210  1.110441 -0.058174
+e -0.773545  2.397445  1.395498  0.294201
+
+          A         B         C         D
+a -0.539496  0.382196  1.259751  0.344533
+b -0.389403  0.383852  1.146155 -0.162185
+d -0.758241  0.142210  1.110441 -0.058174
+
+          B         C         D
+a  0.382196  1.259751  0.344533
+b  0.383852  1.146155 -0.162185
+d  0.142210  1.110441 -0.058174
+
+          B         D
+a  0.382196  0.344533
+b  0.383852 -0.162185
+d  0.142210 -0.058174
+
+
+ser2
+0    a
+3    b
+2    c
+5    d
+4    e
+dtype: object
+
+0    a
+3    b
+2    c
+dtype: object
+
+0    a
+3    b
+dtype: object
+
+
+ser3
+0    a
+1    b
+2    c
+3    d
+4    e
+dtype: object
+
+0    a
+1    b
+2    c
+dtype: object
+
+ser4
+0    a
+2    c
+3    b
+4    e
+5    d
+dtype: object
+
+ser5
+0    a
+3    b
+2    c
+5    d
+4    e
+dtype: object
+
+-------------------
+
+df3
+          0         2         4         6
+0  0.476655 -2.403379  0.564622  0.487659
+2  0.014576 -1.254799  1.158284  0.164404
+4  0.182645 -0.459436  0.814467  1.016612
+6  0.518676  0.763647  3.227888 -0.188602
+8  1.555886  0.947290  0.927472 -0.479427
+
+          2         4         6
+0 -2.403379  0.564622  0.487659
+2 -1.254799  1.158284  0.164404
+4 -0.459436  0.814467  1.016612
+
+          2         4         6
+0 -2.403379  0.564622  0.487659
+2 -1.254799  1.158284  0.164404
+4 -0.459436  0.814467  1.016612
+
+          0         2         4         6
+0  0.476655 -2.403379  0.564622  0.487659
+2  0.014576 -1.254799  1.158284  0.164404
+4  0.182645 -0.459436  0.814467  1.016612
+
+          2         4         6
+0 -2.403379  0.564622  0.487659
+2 -1.254799  1.158284  0.164404
+4 -0.459436  0.814467  1.016612
+6  0.763647  3.227888 -0.188602
+8  0.947290  0.927472 -0.479427
+
+          2         4
+0 -2.403379  0.564622
+6  0.763647  3.227888
+
+
+df4
+          A         B         C         E
+a  0.350466  1.079058  0.131727  0.977701
+b -0.193127  1.373784 -0.440879  1.819710
+c  2.247621 -0.374002 -0.400207  1.356822
+d  0.690319  0.400704  0.529292 -0.670998
+e  0.120201 -1.195470  0.045247 -0.561482
+
+          A         B         C         E
+a  0.350466  1.079058  0.131727  0.977701
+c  2.247621 -0.374002 -0.400207  1.356822
+d  0.690319  0.400704  0.529292 -0.670998
+e  0.120201 -1.195470  0.045247 -0.561482
+
+          A         B         C         E
+a  0.350466  1.079058  0.131727  0.977701
+b -0.193127  1.373784 -0.440879  1.819710
+c  2.247621 -0.374002 -0.400207  1.356822
+d  0.690319  0.400704  0.529292 -0.670998
+e  0.120201 -1.195470  0.045247 -0.561482
+
+------------------------------
+
+ser6
+0    0
+1    1
+2    2
+dtype: int32
+
+0    0
+1    1
+2    2
+5    7
+dtype: int64
+
+0    0
+1    1
+2    2
+5    7
+3    0
+4    0
+dtype: int64
+
+
+df5
+   A  B  C
+0  0  1  2
+1  3  4  5
+2  6  7  8
+
+   A  B  C  T
+0  0  1  2  0
+1  3  4  5  3
+2  6  7  8  6
+
+   A  B  C  T  G
+0  0  1  2  0  A
+1  3  4  5  3  W
+2  6  7  8  6  E
+
+     A    B    C    T    G
+0  NaN  NaN  NaN  NaN  NaN
+1  3.0  4.0  5.0  3.0    W
+2  6.0  7.0  8.0  6.0    E
+
+      A     B     C    T   G
+0  33.0  33.0  33.0    S  33
+1   3.0   4.0   5.0  3.0   W
+2   6.0   7.0   8.0  6.0   E
+
+0    33.0
+1     3.0
+2     6.0
+Name: A, dtype: float64
+
+0    33.0
+1     3.0
+2     6.0
+Name: A, dtype: float64
+
+       A      B      C      T      G
+0  False  False  False  False  False
+1  False  False  False  False  False
+2  False  False  False  False  False
+
+      A     B     C     T     G
+0  True  True  True  True  True
+1  True  True  True  True  True
+2  True  True  True  True  True
+
+-----------------------
+
+
+df6, df7
+   one  two
+a    1    4
+b    2    5
+c    3    6
+
+   one  two
+a  1.0  4.0
+b  2.0  NaN
+c  3.0  6.0
+d  NaN  NaN
+
+df67
+   one   two  three
+a  2.0   8.0    NaN
+b  4.0   NaN    NaN
+c  6.0  12.0    NaN
+d  NaN   NaN    NaN
+
+one      12.0
+two      20.0
+three     0.0
+dtype: float64
+
+one      48.0
+two      96.0
+three     1.0
+dtype: float64
+
+one       4.0
+two      10.0
+three     NaN
+dtype: float64
+
+one      2.000000
+two      2.828427
+three         NaN
+dtype: float64
+
+one       6.0
+two      12.0
+three     NaN
+dtype: float64
+
+12.0
+
+4.0
+
+4.0
+
+
+arr
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+
+9
+
+3.0
+
+2.449489742783178
+
+6
+
+
+   one   two  three
+a  2.0   8.0    NaN
+b  4.0  10.0    NaN
+c  6.0  12.0    NaN
+d  4.0  10.0    NaN
+
+   one   two  three
+a  2.0   8.0    0.0
+b  4.0   0.0    0.0
+c  6.0  12.0    0.0
+d  0.0   0.0    0.0
+
+
+df8
+     A  B    C    D
+0  NaN  2  0.0  NaN
+1  3.0  4  NaN  1.0
+2  NaN  5  NaN  2.0
+3  NaN  1  2.0  3.0
+
+     A  B    C    D
+0  0.0  2  0.0  0.0
+1  3.0  4  0.0  1.0
+2  0.0  5  0.0  2.0
+3  0.0  1  2.0  3.0
+
+     A  B    C    D
+0  NaN  2  0.0  NaN
+1  3.0  4  0.0  1.0
+2  3.0  5  0.0  2.0
+3  3.0  1  2.0  3.0
+
+     A  B    C    D
+0  3.0  2  0.0  1.0
+1  3.0  4  2.0  1.0
+2  NaN  5  2.0  2.0
+3  NaN  1  2.0  3.0
+
+      A  B     C     D
+0  11.0  2   0.0  44.0
+1   3.0  4  33.0   1.0
+2   NaN  5   NaN   2.0
+3   NaN  1   2.0   3.0
+
+----------------------
+
+df9
+    name  age address  score grade
+0  haena   30   dogok    100     A
+1  naeun   27   suwon     88     B
+2    una   28    mapo     73     C
+3    bum   23   ilsan     83     B
+4   suho   18   yeoyi     95     A
+
+None
+
+df99
+     0      1    2        3      4      5
+0  NaN   name  age  address  score  grade
+1  0.0  haena   30    dogok    100      A
+2  1.0  naeun   27    suwon     88      B
+
+    name  age address  score grade
+0  haena   30   dogok    100     A
+1  naeun   27   suwon     88     B
+2    una   28    mapo     73     C
+3    bum   23   ilsan     83     B
+4   suho   18   yeoyi     95     A
+
+   age address  score grade
+0   30   dogok    100     A
+1   27   suwon     88     B
+2   28    mapo     73     C
+3   23   ilsan     83     B
+4   18   yeoyi     95     A
+
+     Unnamed: 0   name address  score grade
+age
+30            0  haena   dogok    100     A
+27            1  naeun   suwon     88     B
+28            2    una    mapo     73     C
+23            3    bum   ilsan     83     B
+18            4   suho   yeoyi     95     A
+
+df999
+    No   name  age  address  score  grade
+0  NaN   name  age  address  score  grade
+1  0.0  haena   30    dogok    100      A
+2  1.0  naeun   27    suwon     88      B
+3  2.0    una   28     mapo     73      C
+4  3.0    bum   23    ilsan     83      B
+5  4.0   suho   18    yeoyi     95      A
+
+    No   name age address score grade
+1  0.0  haena  30   dogok   100     A
+2  1.0  naeun  27   suwon    88     B
+3  2.0    una  28    mapo    73     C
+4  3.0    bum  23   ilsan    83     B
+5  4.0   suho  18   yeoyi    95     A
+
+df_sep
+Empty DataFrame
+Columns: []
+Index: [0,haena,30,dogok,100,A, 1,naeun,27,suwon,88,B, 2,una,28,mapo,73,C, 3,bum,23,ilsan,83,B, 4,suho,18,yeoyi,95,A]
+
+None
+df_sep
+    name  age address  score grade
+0  haena   30   dogok    100     A
+1  naeun   27   suwon     88     B
+2    una   28    mapo     73     C
+3    bum   23   ilsan     83     B
+4   suho   18   yeoyi     95     A
+
+
+dfj
+     col1 col2
+row1    a    b
+row2    c    d
+
+{"col1":{"row1":"a","row2":"c"},"col2":{"row1":"b","row2":"d"}}
+
+{"columns":["col1","col2"],"index":["row1","row2"],"data":[["a","b"],["c","d"]]}
+
+{"col1":{"row1":"a","row2":"c"},"col2":{"row1":"b","row2":"d"}}
+
+[["a","b"],["c","d"]]
+
+{"schema":{"fields":[{"name":"index","type":"string"},{"name":"col1","type":"string"},{"name":"col2","type":"string"}],"primaryKey":["index"],"pandas_version":"1.4.0"},"data":[{"index":"row1","col1":"a","col2":"b"},{"index":"row2","col1":"c","col2":"d"}]}
+
+None
+
+dfjr
+     col1 col2
+row1    a    b
+row2    c    d
+
+
+dfh
+[                         Bank NameBank  ... FundFund
+0                    Almena State Bank  ...    10538
+1           First City Bank of Florida  ...    10537
+2                 The First State Bank  ...    10536
+3                   Ericson State Bank  ...    10535
+4     City National Bank of New Jersey  ...    10534
+..                                 ...  ...      ...
+558                 Superior Bank, FSB  ...     6004
+559                Malta National Bank  ...     4648
+560    First Alliance Bank & Trust Co.  ...     4647
+561  National State Bank of Metropolis  ...     4646
+562                   Bank of Honolulu  ...     4645
+
+[563 rows x 7 columns]]
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-2.264695</td>
+      <td>0.630504</td>
+      <td>-0.548863</td>
+      <td>1.466952</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.084695</td>
+      <td>0.008753</td>
+      <td>-0.502763</td>
+      <td>-0.158170</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-1.130655</td>
+      <td>-0.729710</td>
+      <td>1.467940</td>
+      <td>-0.475186</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.676082</td>
+      <td>1.116045</td>
+      <td>0.310908</td>
+      <td>-1.137523</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.591099</td>
+      <td>-0.842899</td>
+      <td>1.178546</td>
+      <td>0.002705</td>
+    </tr>
+  </tbody>
+</table>
+
+------------------------
+
+df672
+          0      1      2      3      4
+0.25  23.75  24.75  25.75  26.75  27.75
+0.55  52.25  53.25  54.25  55.25  56.25
+0.75  71.25  72.25  73.25  74.25  75.25
+
+np22
+[24.75 54.45 74.25]
+
+[23.75 52.25 71.25]
+
+833.25
+
+
+종료 코드 0(으)로 완료된 프로세스
