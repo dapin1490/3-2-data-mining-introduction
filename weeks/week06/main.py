@@ -223,7 +223,7 @@ print("------------------------", end="\n\n")
 
 df672 = pd.DataFrame(np.arange(0, 100).reshape(20, 5))
 print("df672")
-print(df672.quantile([0.25, 0.55, 0.75]), end="\n\n")
+print(df672.quantile([0.25, 0.55, 0.75]), end="\n\n")  # 미리 만들어둔 배열에 넣고 싶다면 for로 일일이 옮기거나 그냥 결과로 반환된 배열만 쓰기
 
 np22 = np.arange(0, 100).reshape(20, 5)
 print("np22")
