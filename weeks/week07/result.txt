@@ -1,0 +1,310 @@
+C:\Users\dpgbu\AppData\Local\Programs\Python\Python39\python.exe "C:/Users/dpgbu/Desktop/SAE/tool/github desktop/3-2-data-mining-introduction/weeks/week07/wekk07code.py"
+df1
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+
+df3
+    A   B   C
+6  A6  B6  C6
+7  A7  B7  C7
+8  A8  B8  C8
+
+fr
+[    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2,     A   B   C
+3  A3  B3  C3
+4  A4  B4  C4
+5  A5  B5  C5,     A   B   C
+6  A6  B6  C6
+7  A7  B7  C7
+8  A8  B8  C8]
+
+con_r
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+3  A3  B3  C3
+4  A4  B4  C4
+5  A5  B5  C5
+6  A6  B6  C6
+7  A7  B7  C7
+8  A8  B8  C8
+
+      A   B   C
+x 0  A0  B0  C0
+  1  A1  B1  C1
+  2  A2  B2  C2
+y 3  A3  B3  C3
+  4  A4  B4  C4
+  5  A5  B5  C5
+z 6  A6  B6  C6
+  7  A7  B7  C7
+  8  A8  B8  C8
+
+con_r.loc['z']
+    A   B   C
+6  A6  B6  C6
+7  A7  B7  C7
+8  A8  B8  C8
+
+con_r.loc['z'].loc[6]
+A    A6
+B    B6
+C    C6
+Name: 6, dtype: object
+
+df4
+    A   B   C
+3  A3  B3  C3
+5  A5  B5  C5
+6  A6  B6  C6
+con_r1
+     A    B    C    A    B    C
+0   A0   B0   C0  NaN  NaN  NaN
+1   A1   B1   C1  NaN  NaN  NaN
+2   A2   B2   C2  NaN  NaN  NaN
+3  NaN  NaN  NaN   A3   B3   C3
+5  NaN  NaN  NaN   A5   B5   C5
+6  NaN  NaN  NaN   A6   B6   C6
+
+Empty DataFrame
+Columns: [A, B, C, A, B, C]
+Index: []
+
+df4
+    A   B   C
+1  A1  B1  C1
+5  A5  B5  C5
+6  A6  B6  C6
+
+pd.concat([df1, df4], axis=1, sort=False, join='outer')
+     A    B    C    A    B    C
+0   A0   B0   C0  NaN  NaN  NaN
+1   A1   B1   C1   A1   B1   C1
+2   A2   B2   C2  NaN  NaN  NaN
+5  NaN  NaN  NaN   A5   B5   C5
+6  NaN  NaN  NaN   A6   B6   C6
+
+pd.concat([df1, df4], axis=0, sort=False, join='outer')
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+1  A1  B1  C1
+5  A5  B5  C5
+6  A6  B6  C6
+
+pd.concat([df1, df4], axis=0, sort=True, join='outer')
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+1  A1  B1  C1
+5  A5  B5  C5
+6  A6  B6  C6
+
+pd.concat([df1, df4], axis=0, sort=True, join='inner')
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+1  A1  B1  C1
+5  A5  B5  C5
+6  A6  B6  C6
+
+pd.concat([df1, df4], axis=1, ignore_index=True)
+     0    1    2    3    4    5
+0   A0   B0   C0  NaN  NaN  NaN
+1   A1   B1   C1   A1   B1   C1
+2   A2   B2   C2  NaN  NaN  NaN
+5  NaN  NaN  NaN   A5   B5   C5
+6  NaN  NaN  NaN   A6   B6   C6
+
+pd.concat([df1, df4], axis=1, ignore_index=False)
+     A    B    C    A    B    C
+0   A0   B0   C0  NaN  NaN  NaN
+1   A1   B1   C1   A1   B1   C1
+2   A2   B2   C2  NaN  NaN  NaN
+5  NaN  NaN  NaN   A5   B5   C5
+6  NaN  NaN  NaN   A6   B6   C6
+
+pd.concat([df1, df4], ignore_index=True)
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+3  A1  B1  C1
+4  A5  B5  C5
+5  A6  B6  C6
+
+
+df1.append(df2)
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+3  A3  B3  C3
+4  A4  B4  C4
+5  A5  B5  C5
+
+df1.append(df4, sort=False)
+C:\Users\dpgbu\Desktop\SAE\tool\github desktop\3-2-data-mining-introduction\weeks\week07\wekk07code.py:80: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  con_r2 = df1.append(df2)
+C:\Users\dpgbu\Desktop\SAE\tool\github desktop\3-2-data-mining-introduction\weeks\week07\wekk07code.py:84: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  con_r2 = df1.append(df4, sort=False)
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2
+1  A1  B1  C1
+5  A5  B5  C5
+6  A6  B6  C6
+
+---------------------------
+
+pd.merge(df1, df2, on='key')
+  key   value_x   value_y
+0   B  0.327956 -1.760064
+1   D -1.021825 -0.761697
+2   D -1.021825 -0.941334
+
+pd.merge(df1, df2)
+Empty DataFrame
+Columns: [key, value]
+Index: []
+
+pd.merge(df1, df2, on='key', how='left')
+  key   value_x   value_y
+0   A -0.990932       NaN
+1   B  0.327956 -1.760064
+2   C  0.287961       NaN
+3   D -1.021825 -0.761697
+4   D -1.021825 -0.941334
+
+pd.merge(df1, df2, on='key', how='right')
+  key   value_x   value_y
+0   B  0.327956 -1.760064
+1   D -1.021825 -0.761697
+2   D -1.021825 -0.941334
+3   E       NaN -0.128266
+
+pd.merge(df1, df2, on='key', how='outer')
+  key   value_x   value_y
+0   A -0.990932       NaN
+1   B  0.327956 -1.760064
+2   C  0.287961       NaN
+3   D -1.021825 -0.761697
+4   D -1.021825 -0.941334
+5   E       NaN -0.128266
+
+pd.merge(left, right, on=['key1', 'key2'])
+  key1 key2   A   B   C   D
+0   Z0   ZO  A0  B0  C0  D0
+1   Z1   Z0  A2  B2  C1  D1
+2   Z1   Z0  A2  B2  C2  D2
+
+pd.merge(left, right, on=['key1', 'key2'], how='left')
+  key1 key2   A   B    C    D
+0   Z0   ZO  A0  B0   C0   D0
+1   Z0   Z1  A1  B1  NaN  NaN
+2   Z1   Z0  A2  B2   C1   D1
+3   Z1   Z0  A2  B2   C2   D2
+4   Z2   Z1  A3  B3  NaN  NaN
+
+pd.merge(left, right, on=['key1', 'key2'], how='right')
+  key1 key2    A    B   C   D
+0   Z0   ZO   A0   B0  C0  D0
+1   Z1   Z0   A2   B2  C1  D1
+2   Z1   Z0   A2   B2  C2  D2
+3   Z2   Z0  NaN  NaN  C3  D3
+
+pd.merge(left, right, on=['key1', 'key2'], how='outer')
+  key1 key2    A    B    C    D
+0   Z0   ZO   A0   B0   C0   D0
+1   Z0   Z1   A1   B1  NaN  NaN
+2   Z1   Z0   A2   B2   C1   D1
+3   Z1   Z0   A2   B2   C2   D2
+4   Z2   Z1   A3   B3  NaN  NaN
+5   Z2   Z0  NaN  NaN   C3   D3
+
+---------------------------
+
+df
+        A  B   C   D          E
+0     one  x  ha   0 2020-01-01
+1     one  y  ha   1 2020-02-01
+2     two  w  ha   2 2020-03-01
+3   three  x  hi   3 2020-04-01
+4     one  y  hi   4 2020-05-01
+5     one  w  hi   5 2020-06-01
+6     two  x  ha   6 2020-07-01
+7   three  y  ha   7 2020-08-01
+8     one  w  ha   8 2020-09-01
+9     one  x  hi   9 2020-10-01
+10    two  y  hi  10 2020-11-01
+11  three  w  hi  11 2020-12-01
+12    one  x  ha  12 2020-01-15
+13    one  y  ha  13 2020-02-15
+14    two  w  ha  14 2020-03-15
+15  three  x  hi  15 2020-04-15
+16    one  y  hi  16 2020-05-15
+17    one  w  hi  17 2020-06-15
+18    two  x  ha  18 2020-07-15
+19  three  y  ha  19 2020-08-15
+20    one  w  ha  20 2020-09-15
+21    one  x  hi  21 2020-10-15
+22    two  y  hi  22 2020-11-15
+23  three  w  hi  23 2020-12-15
+
+pd.pivot_table(df, values='D', index=['A', 'B'], columns='C')
+C          ha    hi
+A     B
+one   w  14.0  11.0
+      x   6.0  15.0
+      y   7.0  10.0
+three w   NaN  17.0
+      x   NaN   9.0
+      y  13.0   NaN
+two   w   8.0   NaN
+      x  12.0   NaN
+      y   NaN  16.0
+
+pd.pivot_table(df, values='D', index=['B'], columns=['A', 'C'], aggfunc=np.sum)
+A   one       three         two
+C    ha    hi    ha    hi    ha    hi
+B
+w  28.0  22.0   NaN  34.0  16.0   NaN
+x  12.0  30.0   NaN  18.0  24.0   NaN
+y  14.0  20.0  26.0   NaN   NaN  32.0
+
+pivot_r.to_string(na_rep='')
+A   one       three         two
+C    ha    hi    ha    hi    ha    hi
+B
+w  28.0  22.0        34.0  16.0
+x  12.0  30.0        18.0  24.0
+y  14.0  20.0  26.0              32.0
+
+---------------------------
+
+m = re.search('(?<=abc)def', 'abcdef')
+m.group()
+def
+
+m
+<re.Match object; span=(3, 6), match='def'>
+
+m.group(0)
+def
+
+m = re.search('(?<=-)\w+', 'spam-egg')
+m.group(0)
+egg
+
+
+종료 코드 0(으)로 완료된 프로세스

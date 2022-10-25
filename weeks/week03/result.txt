@@ -1,0 +1,354 @@
+C:\Users\dpgbu\AppData\Local\Programs\Python\Python39\python.exe "C:/Users/dpgbu/Desktop/SAE/tool/github desktop/3-2-data-mining-introduction/weeks/week03/week03code.py"
+np.ones(8)
+[1. 1. 1. 1. 1. 1. 1. 1.]
+
+list(range(1, 8))
+[1, 2, 3, 4, 5, 6, 7]
+
+np.arange(1, 8)
+[1 2 3 4 5 6 7]
+
+type(x)
+<class 'list'>
+
+x_np.dtype
+int32
+
+sum(x)
+28
+
+x_np.sum()
+28
+
+x[0:5]
+[1, 2, 3, 4, 5]
+
+x_np[0:5].sum()
+15
+
+x2
+[[1, 2, 3], [4, 5, 6]]
+
+x2_np
+[[1 2 3]
+ [4 5 6]]
+
+x_np.shape
+(7,)
+
+x2_np.shape
+(2, 3)
+
+x2.shape
+(2, 3)
+
+x4_np = np.empty(shape=(6, 2))
+[[ -938096192     2143260]
+ [ -948120820     2148164]
+ [ -951792578 -1038614496]
+ [ -976879584 -1295465803]
+ [      45796           0]
+ [-1784414208         637]]
+
+x3_np
+[[ 1. -1.]
+ [ 1. -1.]
+ [ 1. -1.]
+ [ 1. -1.]
+ [ 1. -1.]
+ [ 1. -1.]]
+
+[[3. 3.]
+ [3. 3.]
+ [3. 3.]
+ [3. 3.]
+ [3. 3.]
+ [3. 3.]]
+
+np.eye(5, dtype=int)
+[[1 0 0 0 0]
+ [0 1 0 0 0]
+ [0 0 1 0 0]
+ [0 0 0 1 0]
+ [0 0 0 0 1]]
+
+np.eye(4, k=1)  # k만큼 대각선이 밀림
+[[0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=-5)
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=-4)
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=-3)
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [1. 0. 0. 0.]]
+
+np.eye(4, k=-2)
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [1. 0. 0. 0.]
+ [0. 1. 0. 0.]]
+
+np.eye(4, k=-1)
+[[0. 0. 0. 0.]
+ [1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]]
+
+np.eye(4, k=0)
+[[1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]]
+
+np.eye(4, k=1)
+[[0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=2)
+[[0. 0. 1. 0.]
+ [0. 0. 0. 1.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=3)
+[[0. 0. 0. 1.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=4)
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+np.eye(4, k=5)
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+np.linspace(2, 3, num=5)
+[2.   2.25 2.5  2.75 3.  ]
+
+np.linspace(2, 3, num=5, endpoint=False)
+[2.  2.2 2.4 2.6 2.8]
+
+np.arange(1, 7)
+[1 2 3 4 5 6]
+
+x7_np.reshape((2, 3))  # 원래의 배열을 바꾸지 않음, 사이즈 안 맞으면 오류 남
+[[1 2 3]
+ [4 5 6]]
+
+x7_np
+[1 2 3 4 5 6]
+
+x7_np.reshape((2, 3))
+[[1 2 3]
+ [4 5 6]]
+
+x7_np.reshape(-1)
+[1 2 3 4 5 6]
+
+np.arange(1, 25)
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24]
+
+x7_np = x7_np.reshape((2, 3, 4))
+[[[ 1  2  3  4]
+  [ 5  6  7  8]
+  [ 9 10 11 12]]
+
+ [[13 14 15 16]
+  [17 18 19 20]
+  [21 22 23 24]]]
+
+x7_np = x7_np.reshape(-1)
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24]
+
+x7_np = x7_np.reshape(3, -1)
+[[ 1  2  3  4  5  6  7  8]
+ [ 9 10 11 12 13 14 15 16]
+ [17 18 19 20 21 22 23 24]]
+
+x7_np.shape
+(3, 8)
+
+np.arange(1, 25).reshape((1, 6, 4))
+[[[ 1  2  3  4]
+  [ 5  6  7  8]
+  [ 9 10 11 12]
+  [13 14 15 16]
+  [17 18 19 20]
+  [21 22 23 24]]]
+
+print(x8_np.ndim)  # 차원 수
+3
+
+print(x8_np.shape)  # 차원 모양
+(1, 6, 4)
+
+print(x8_np.size)  # 요소 개수
+24
+
+print(x8_np.dtype)  # 요소 자료형
+int32
+
+print(x8_np.itemsize)  # 요소의 바이트 수
+4
+
+print(x8_np.strides)  # 배열을 순회할 때 각 차원에서 단계별로 수행할 바이트의 튜플입니다. Tuple of bytes to step in each dimension when traversing an array.
+(96, 16, 4)
+
+x = [('f1', np.int16)]
+print(np.dtype(x))
+[('f1', '<i2')]
+
+x = [('f1', np.int16), ('f2', np.int32)]
+print(np.dtype(x))
+[('f1', '<i2'), ('f2', '<i4')]
+
+y = [('a', 'i2'), ('b', 'S2')]
+print(np.dtype(y))
+[('a', '<i2'), ('b', 'S2')]
+
+print(np.dtype('i4, (2,3)f8'))
+[('f0', '<i4'), ('f1', '<f8', (2, 3))]
+
+print(np.dtype((np.int16, {'x': (np.int8, 0), 'y': (np.int8, 1)})))
+(numpy.int16, [('x', 'i1'), ('y', 'i1')])
+
+print(np.dtype({'surname': ('S25', 0), 'age': (np.uint8, 25)}))
+[('surname', 'S25'), ('age', 'u1')]
+
+a = np.float32(5)
+5.0
+
+print(type(a))
+<class 'numpy.float32'>
+
+print(a.dtype)
+float32
+
+b = np.int_([4.0, 7.0, 999.9])
+[  4   7 999]
+
+print(type(b))
+<class 'numpy.ndarray'>
+
+print(b.dtype)
+int32
+
+c = np.arange(7, dtype=np.uint16)
+[0 1 2 3 4 5 6]
+
+print(type(c))
+<class 'numpy.ndarray'>
+
+print(c.dtype)
+uint16
+
+dt = np.dtype([('name', np.unicode_, 16), ('grades', np.float64, (2,))])
+print(dt['name'])
+<U16
+
+print(dt['grades'])
+('<f8', (2,))
+
+arr = np.array([('jin', 25, 67), ('suho', 18, 77)], dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
+[('jin', 25, 67.) ('suho', 18, 77.)]
+
+print(arr[1])
+('suho', 18, 77.)
+
+print(arr['age'])
+[25 18]
+
+arr['age'][1] = 20
+arr['weight'][0] = 65
+print(arr)
+[('jin', 25, 65.) ('suho', 20, 77.)]
+
+print(np.dtype([(, np.int16), (, np.float32)]))
+[('f0', '<i2'), ('f1', '<f4')]
+
+offsets: [0, 1, 2, 6, 7, 15]
+itemsize: 17
+d = np.dtype('u1,u1,i4,u1,i8,u2')
+[('f0', 'u1'), ('f1', 'u1'), ('f2', '<i4'), ('f3', 'u1'), ('f4', '<i8'), ('f5', '<u2')]
+
+17
+
+{'f0': (dtype('uint8'), 0), 'f1': (dtype('uint8'), 1), 'f2': (dtype('int32'), 2), 'f3': (dtype('uint8'), 6), 'f4': (dtype('int64'), 7), 'f5': (dtype('uint16'), 15)}
+
+('f0', 'f1', 'f2', 'f3', 'f4', 'f5')
+
+(dtype('uint8'), 0)
+
+0
+
+offsets: [0, 1, 4, 8, 16, 24]
+itemsize: 32
+a = np.array([(1, 2, 3), (4, 5, 6)], dtype='i8, f4, f8')
+a[1] = (7, 8, 9)
+[(1, 2., 3.) (7, 8., 9.)]
+
+a = np.zeros(3, dtype=[('a', 'i8'), ('b', 'f4'), ('c', 'S3')])
+[(0, 0., b'') (0, 0., b'') (0, 0., b'')]
+
+b = np.ones(3, dtype=[('x', 'f4'), ('y', 'S3'), ('z', 'O')])
+print(b.dtype)
+[('x', '<f4'), ('y', 'S3'), ('z', 'O')]
+
+b[:] = a
+print(b.dtype)
+[('x', '<f4'), ('y', 'S3'), ('z', 'O')]
+arr = np.array([[1, 2], [3, 4], [5, 6]])
+[[1 2]
+ [3 4]
+ [5 6]]
+
+print(arr[[0, 1, 2], [0, 1, 0]])  # 인덱싱으로 인덱싱하기
+[1 4 5]
+
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([11, 12, 13])
+arr1_nx = arr1[:, np.newaxis]
+arr2_nx = arr2[:, np.newaxis]
+(5, 1)
+
+(3, 1)
+
+print(arr1_nx + arr2)
+[[12 13 14]
+ [13 14 15]
+ [14 15 16]
+ [15 16 17]
+ [16 17 18]]
+
+arr2_1 = arr2_nx + arr1
+arr2_1 = arr2_1.T  # transpose
+[[12 13 14]
+ [13 14 15]
+ [14 15 16]
+ [15 16 17]
+ [16 17 18]]
+
+
+종료 코드 0(으)로 완료된 프로세스

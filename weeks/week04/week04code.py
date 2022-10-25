@@ -3,81 +3,69 @@ week 4
 """
 import numpy as np
 
-print(np.add.nin)  # 입력 개수
-print(np.add.nout)  # 출력 개수
-print()
-print(np.exp.nin)
-print(np.exp.nout)
-print()
-print(np.ufunc.nin)
-print(np.ufunc.nout)
-print()
+print(np.add.nin, end="\n\n")  # 입력 개수
+print(np.add.nout, end="\n\n")  # 출력 개수
+
+print(np.exp.nin, end="\n\n")
+print(np.exp.nout, end="\n\n")
+
+print(np.ufunc.nin, end="\n\n")
+print(np.ufunc.nout, end="\n\n")
 # print(np.sum.nout)  # 모든 함수가 nin을 갖지는 않음
 
-print(np.add([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]))
-print()
+print(np.add([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]), end="\n\n")
 
 arr = np.array([1, 2, 3, 4, 5])
-print(np.add.reduce(arr))
-print()
+print(np.add.reduce(arr), end="\n\n")
 
 arr = np.array([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]])
-print(arr)
-print(arr.shape)
-print(np.add.reduce(arr, axis=0))
-print(np.add.reduce(arr, axis=1))
-print()
+print(arr, end="\n\n")
+print(arr.shape, end="\n\n")
+print(np.add.reduce(arr, axis=0), end="\n\n")
+print(np.add.reduce(arr, axis=1), end="\n\n")
 
-print(np.add.accumulate([1, 2, 3, 4, 5]))  # 누적 합
-print(np.add.accumulate([1, 1, 1, 1, 1]))  # 누적 합
-print()
+print(np.add.accumulate([1, 2, 3, 4, 5]), end="\n\n")  # 누적 합
+print(np.add.accumulate([1, 1, 1, 1, 1]), end="\n\n")  # 누적 합
 
 arr = np.arange(1, 13).reshape(3, 4)
-print(arr)
-print(arr.shape)
-print(np.add.accumulate(arr))  # 위에서 아래로 누적 합
-print(np.add.accumulate(arr, axis=0))  # 위에서 아래로 누적 합
-print(np.add.accumulate(arr, axis=1))  # 위에서 아래로 누적 합
-print()
+print(arr, end="\n\n")
+print(arr.shape, end="\n\n")
+print(np.add.accumulate(arr), end="\n\n")  # 위에서 아래로 누적 합
+print(np.add.accumulate(arr, axis=0), end="\n\n")  # 위에서 아래로 누적 합
+print(np.add.accumulate(arr, axis=1), end="\n\n")  # 위에서 아래로 누적 합
 
 arr = np.arange(1, 13).reshape(3, 4)
-print(arr)
-print(arr.shape)
-print(np.multiply.accumulate(arr))  # 위에서 아래로 누적 합
-print(np.multiply.accumulate(arr, axis=0))  # 위에서 아래로 누적 합
-print(np.multiply.accumulate(arr, axis=1))  # 위에서 아래로 누적 합
-print()
+print(arr, end="\n\n")
+print(arr.shape, end="\n\n")
+print(np.multiply.accumulate(arr), end="\n\n")  # 위에서 아래로 누적 합
+print(np.multiply.accumulate(arr, axis=0), end="\n\n")  # 위에서 아래로 누적 합
+print(np.multiply.accumulate(arr, axis=1), end="\n\n")  # 위에서 아래로 누적 합
 
 arr = np.arange(0, 7)
-print(arr)
-print(arr.shape)
-print(np.add.reduceat(arr, [0, 3, 5, 6]))
-print(np.add.reduceat(arr, [0, 1, 2, 3]))
-print(np.add.reduceat(arr, [1, 2, 3]))
-print(np.add.reduceat(arr, arr))
-print()  # 뭔지 모르겠음
+print(arr, end="\n\n")
+print(arr.shape, end="\n\n")
+print(np.add.reduceat(arr, [0, 3, 5, 6]), end="\n\n")
+print(np.add.reduceat(arr, [0, 1, 2, 3]), end="\n\n")
+print(np.add.reduceat(arr, [1, 2, 3]), end="\n\n")
+print(np.add.reduceat(arr, arr), end="\n\n")
+# 뭔지 모르겠음
 
 arr = np.linspace(0, 5, 6).reshape(2, 3)
-print(arr)
-print()
+print(arr, end="\n\n")
 
-print(np.multiply.outer([1, 2, 3], [1, 2, 3]))
-print(np.multiply.outer([1, 2, 4], [2, 4, 8]))
-print(np.multiply.outer([1, 2, 4], [2, 4, 8, 16]))
-print()
+print(np.multiply.outer([1, 2, 3], [1, 2, 3]), end="\n\n")
+print(np.multiply.outer([1, 2, 4], [2, 4, 8]), end="\n\n")
+print(np.multiply.outer([1, 2, 4], [2, 4, 8, 16]), end="\n\n")
 
-print(np.subtract(1, 2))  # 위에서 한 거 다 알아서 해보면 됨
-print()
+print(np.subtract(1, 2), end="\n\n")  # 위에서 한 거 다 알아서 해보면 됨
 
-print(np.power(2, 3))
+print(np.power(2, 3), end="\n\n")
 arr = np.array([1, 2, 3, 4, 5])
-print(np.power(arr, 3))
-print()
+print(np.power(arr, 3), end="\n\n")
 
-print(np.sin(np.pi / 2))
-print(np.cos(np.pi / 2))  # 사실상 0이라는 뜻
-print(np.cos(np.deg2rad(90)))
-print()
+print(np.sin(np.pi / 2), end="\n\n")
+print(np.cos(np.pi / 2), end="\n\n")  # 사실상 0이라는 뜻
+print(np.cos(np.deg2rad(90)), end="\n\n")
 
 ##
 
@@ -105,78 +93,72 @@ plt.ylabel('sin(x)')
 plt.axis('tight')
 # plt.show()
 
-print(np.bitwise_and(7, 5))  # 7 = 111, 5 = 0101
-print(np.bitwise_and(8, 5))  # 8 = 1000
+print(np.bitwise_and(7, 5), end="\n\n")  # 7 = 111, 5 = 0101
+print(np.bitwise_and(8, 5), end="\n\n")  # 8 = 1000
 # 7 & 5 = 0101
 # 7 & 8 = 0000
 # 9 = 1001
 # 9 & 5 = 0001
-print(np.bitwise_and(9, 5))
-print(np.bitwise_or(9, 5))  # 1101 = 13
-print(np.binary_repr(100))
-print(np.binary_repr(7567))
-print(np.binary_repr(75678))
-print()
+print(np.bitwise_and(9, 5), end="\n\n")
+print(np.bitwise_or(9, 5), end="\n\n")  # 1101 = 13
+print(np.binary_repr(100), end="\n\n")
+print(np.binary_repr(7567), end="\n\n")
+print(np.binary_repr(75678), end="\n\n")
 
-print(np.bitwise_and([7, 8, 9, 13, 45678], 5))
-print()
+print(np.bitwise_and([7, 8, 9, 13, 45678], 5), end="\n\n")
 
 arr = np.random.randn(3, 4)
-print(arr)
+print(arr, end="\n\n")
 arr1 = arr[0, :]
-print(arr1)
+print(arr1, end="\n\n")
 arr2 = arr1
-print(arr2)
+print(arr2, end="\n\n")
 print('---')
 arr1[:] = 0
-print(arr, '\n', arr1, '\n', arr2)
+print(arr, '\n', arr1, '\n', arr2, end="\n\n")
 
 arr1 = arr[0, :].copy()
-print(arr1)
+print(arr1, end="\n\n")
 arr2 = arr1.copy()
-print(arr2)
+print(arr2, end="\n\n")
 print('---')
 arr1[:] = 9
-print(arr, '\n', arr1, '\n', arr2)
-print()
+print(arr, '\n', arr1, '\n', arr2, end="\n\n")
 
 a = np.array([1, 2, 3])
 b = np.array([2, 2, 3])
 b1 = 2
 arr = a * b
 arr1 = a * b1
-print(arr)
-print(arr1)
-print()
+print(arr, end="\n\n")
+print(arr1, end="\n\n")
 
 arr1 = np.arange(4)
 arr3 = np.ones(5)
-print(arr1.shape)
-print(arr3.shape)
+print(arr1.shape, end="\n\n")
+print(arr3.shape, end="\n\n")
 arr2 = arr1.reshape(4, 1)
 arr4 = np.ones((3, 4))
-print(arr2.shape)
-print(arr4.shape)
+print(arr2.shape, end="\n\n")
+print(arr4.shape, end="\n\n")
 arr12 = arr1 + arr2
-print(arr12)
+print(arr12, end="\n\n")
 # arr13 = arr1 + arr3
 # print(arr13)
 arr23 = arr2 + arr3
-print(arr23)
+print(arr23, end="\n\n")
 # arr24 = arr2 + arr4
 # print(arr24)
 arr14 = arr1 + arr4
-print(arr14)
-print()
+print(arr14, end="\n\n")
 
 arr1 = np.array([1, 2, 3])
 arr2 = np.array([[4], [5], [6]])
 arr = np.broadcast(arr1, arr2)
-print(arr)
-print(arr.numiter)
-print(arr.index)
-print(arr1 + arr2)
-print()
+print(arr, end="\n\n")
+print(arr.numiter, end="\n\n")
+print(arr.index, end="\n\n")
+print(arr1 + arr2, end="\n\n")
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -188,48 +170,43 @@ plt.pcolor(arr_img)
 plt.colorbar()
 plt.axis('equal')
 # plt.show()
-print(arr_img.mean(axis=0))
-print(arr_img.mean(axis=1))
+print(arr_img.mean(axis=0), end="\n\n")
+print(arr_img.mean(axis=1), end="\n\n")
 # print(arr_img.mean(axis=2))  # 차원이 있으면 연산 가능한 듯 함. 아주 중요하다고 함
-print()
 
 arr1 = np.array([[1, 2], [3, 4]])
 arr2 = np.array([[5, 6]])
-print(np.concatenate((arr1, arr2), axis=0))
-print(np.concatenate((arr1, arr2.T), axis=1))
-print(np.concatenate((arr1, arr2), axis=None))
-print()
+print(np.concatenate((arr1, arr2), axis=0), end="\n\n")
+print(np.concatenate((arr1, arr2.T), axis=1), end="\n\n")
+print(np.concatenate((arr1, arr2), axis=None), end="\n\n")
 
-print(np.hstack((arr1, arr2.T)))
-print(np.vstack((arr1, arr2)))
-print()
+print(np.hstack((arr1, arr2.T)), end="\n\n")
+print(np.vstack((arr1, arr2)), end="\n\n")
 
 a = np.array([np.random.randint(0, 12) for _ in range(12)]).reshape(3, 4)
-print(a)
+print(a, end="\n\n")
 a.sort()
-print(a)
+print(a, end="\n\n")
 a1 = np.sort(a, axis=None)
 # a.sort(axis=None)
-print(a1)
-print(a)
+print(a1, end="\n\n")
+print(a, end="\n\n")
 a1 = np.sort(a, axis=1)
 a.sort(axis=1)
-print(a1)
-print(a)
+print(a1, end="\n\n")
+print(a, end="\n\n")
 a1 = np.sort(a, axis=0)
 a.sort(axis=0)
-print(a1)
-print(a)
-print()
+print(a1, end="\n\n")
+print(a, end="\n\n")
 
 dtypes = [('name', 'S10'), ('height', float), ('age', int)]
 values = [('Jin', 175, 59), ('Suho', 185, 19), ('Naeun', 162, 28), ('Naeun2', 162, 38), ('Naeun3', 1162, 28)]
 arr = np.array(values, dtype=dtypes)  # 구조화된 배열 생성
-print(np.sort(arr, order='height'))
-print(np.sort(arr, order='age'))
-print(np.sort(arr, order='name'))
-print(np.sort(arr, order=['age', 'height']))
-print()
+print(np.sort(arr, order='height'), end="\n\n")
+print(np.sort(arr, order='age'), end="\n\n")
+print(np.sort(arr, order='name'), end="\n\n")
+print(np.sort(arr, order=['age', 'height']), end="\n\n")
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -241,15 +218,15 @@ plt.title("numbers depending on ages")
 
 arr1 = arr2 = arr3 = np.arange(0, 5, 1)
 arr4 = np.array((arr1, arr2, arr3))
-np.savetxt('test1.txt', arr, delimiter=',')  # arr1은 배열
-np.savetxt('test2.txt', (arr1, arr2, arr3))  # 동일 크기의 2D 배열
-np.savetxt('test3.txt', arr1, fmt='%1.4e')  # 지수 표기
-print(np.loadtxt('test1.txt'))
-print(np.loadtxt('test2.txt'))
-print(np.loadtxt('test3.txt'))
-np.savetxt('test1.csv', arr1, delimiter=',')  # arr1은 배열
-np.savetxt('test2.csv', arr4, delimiter=',')  # 동일 크기의 2D 배열
-np.savetxt('test3.csv', arr1, fmt='%1.4e')  # 지수 표기
+np.savetxt(r'weeks\week04\week04data\test1.txt', arr, delimiter=',')  # arr1은 배열
+np.savetxt(r'weeks\week04\week04data\test2.txt', (arr1, arr2, arr3))  # 동일 크기의 2D 배열
+np.savetxt(r'weeks\week04\week04data\test3.txt', arr1, fmt='%1.4e')  # 지수 표기
+print(np.loadtxt(r'weeks\week04\week04data\test1.txt'), end="\n\n")
+print(np.loadtxt(r'weeks\week04\week04data\test2.txt'), end="\n\n")
+print(np.loadtxt(r'weeks\week04\week04data\test3.txt'), end="\n\n")
+np.savetxt(r'weeks\week04\week04data\test1.csv', arr1, delimiter=',')  # arr1은 배열
+np.savetxt(r'weeks\week04\week04data\test2.csv', arr4, delimiter=',')  # 동일 크기의 2D 배열
+np.savetxt(r'weeks\week04\week04data\test3.csv', arr1, fmt='%1.4e')  # 지수 표기
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.datasets import make_classification
@@ -270,5 +247,4 @@ clf.score(X_test, y_test)  # 모델 정확률 계산
 a1 = np.array([0, 1, 2, 3])
 a2 = np.array([3, 2, 1, 0])
 a3 = np.append(a1, a2)
-print(a3)
-print()
+print(a3, end="\n\n")
