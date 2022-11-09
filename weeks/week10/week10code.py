@@ -311,7 +311,8 @@ df2.plot.barh(stacked=True)
 plt.savefig(r"images/ex28.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
 
-df3 = pd.DataFrame({'a': np.random.randn(500) + 1, 'b': np.random.randn(500), 'c': np.random.randn(500) - 1}, columns=['a', 'b', 'c'])
+df3 = pd.DataFrame({'a': np.random.randn(500) + 1, 'b': np.random.randn(500), 'c': np.random.randn(500) - 1},
+                   columns=['a', 'b', 'c'])
 
 df3.plot.hist(alpha=0.5)
 # plt.show()
@@ -334,10 +335,117 @@ ser.hist(by=np.random.randint(0, 4, 500), figsize=(7, 4))
 plt.savefig(r"images/ex32.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
 
-df = pd.DataFrame(np.random.rand(5, 4),   columns=['A', 'B', 'C', 'D'])
+df = pd.DataFrame(np.random.rand(5, 4), columns=['A', 'B', 'C', 'D'])
 df.plot.box()
 # plt.show()
 plt.savefig(r"images/ex33.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
 
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
+df = pd.DataFrame(np.random.rand(5, 4), columns=['A', 'B', 'C', 'D'])
+df.plot.box()
+# plt.show()
+plt.savefig(r"images/ex34.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+color = {'boxes': 'blue', 'whiskers': 'red', 'medians': 'green', 'caps': 'orange'}
+df.plot.box(color=color, sym='r+')
+# plt.show()
+plt.savefig(r"images/ex35.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df.plot.box(vert=False, positions=[1, 3, 4, 5])
+# plt.show()
+plt.savefig(r"images/ex36.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+bp = df.boxplot()
+# plt.show()
+plt.savefig(r"images/ex37.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df = pd.DataFrame(np.random.rand(10, 2), columns=['HA', 'HI'])
+df['HO'] = pd.Series(['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'])
+bp = df.boxplot(by='HO')
+# plt.show()
+plt.savefig(r"images/ex38.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df1 = pd.DataFrame(np.random.rand(7, 3), columns=['HA', 'HI', 'HO'])
+df1['X'] = pd.Series(['A', 'A', 'A', 'A', 'B', 'B', 'B'])
+df1['Y'] = pd.Series(['A', 'B', 'A', 'B', 'A', 'B', 'A'])
+
+bp = df1.boxplot(column=['HA', 'HO'], by=['X', 'Y'])
+# plt.show()
+plt.savefig(r"images/ex39.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df = pd.DataFrame(np.random.rand(5, 3), columns=['HA', 'HI', 'HO'])
+df.plot.area()
+# plt.show()
+plt.savefig(r"images/ex40.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df.plot.area(stacked=False)
+# plt.show()
+plt.savefig(r"images/ex41.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df = pd.DataFrame(np.random.rand(20, 4), columns=['a', 'b', 'c', 'd'])
+
+df.plot.scatter(x='a', y='b')
+# plt.show()
+plt.savefig(r"images/ex42.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+axsub = df.plot.scatter(x='a', y='b', color='darkgreen', label='Group A')
+df.plot.scatter(x='c', y='d', color='red', label='Group B', ax=axsub)
+# plt.show()
+plt.savefig(r"images/ex43.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df.plot.scatter(x='a', y='b', c='c', s=100)
+# plt.show()
+plt.savefig(r"images/ex44.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df.plot.scatter(x='a', y='b', s=df['d'] * 500)
+# plt.show()
+plt.savefig(r"images/ex45.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df = pd.DataFrame(np.random.randn(1000, 2), columns=['HA', 'HI'])
+df['HI'] = df['HI'] + np.arange(1000)
+df.plot.hexbin(x='HA', y='HI', gridsize=20)
+# plt.show()
+plt.savefig(r"images/ex46.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df['HO'] = np.random.uniform(0, 3, 1000)
+df.plot.hexbin(x='HA', y='HI', C='HO', reduce_C_function=np.max, gridsize=20)
+# plt.show()
+plt.savefig(r"images/ex47.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+ser = pd.Series(np.random.rand(4), index=['A', 'B', 'C', 'D'], name='series')
+ser.plot.pie(figsize=(5, 5))
+# plt.show()
+plt.savefig(r"images/ex48.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+df = pd.DataFrame(np.random.rand(3, 2), index=['A', 'B', 'C'], columns=['HA', 'HO'])
+df.plot.pie(subplots=True, figsize=(10, 5))
+# plt.show()
+plt.savefig(r"images/ex49.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+
+ser.plot.pie(labels=['A', 'B', 'C', 'D'], colors=['r', 'g', 'b', 'y'], autopct='%.2f', fontsize=15, figsize=(5, 5))
+
+ser = pd.Series([0.24] * 4, index=['A', 'B', 'C', 'D'], name='series1')
+ser.plot.pie(figsize=(5, 5))
+# plt.show()
+plt.savefig(r"images/ex50.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
