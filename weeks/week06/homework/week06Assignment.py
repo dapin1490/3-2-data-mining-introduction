@@ -59,3 +59,38 @@ sample_std(data, means, stds)
 results = pd.DataFrame({"mean": means, "std": stds, "max": maxs, "min": mins, "top 15%": top5[0], "top 35%": top5[1], "top 50%": top5[2], "top 65%": top5[3], "top 85%": top5[4]}, index=colum)
 print("mean: 평균, std: 표준편차, max: 최고, min: 최소, [top 15%, top 35%, top 50%, top 65%, top 85%]: 5분위")
 print(results.transpose())
+
+# 교수 답안
+
+import pandas as pd
+import numpy as np
+
+df2 = pd.read_csv('weeks/week06/homework/testdata.csv')
+print(" ")
+print("PANDAS")
+print("{:20s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s}".format(" ", "avg", "max", "min", "std", "15%", "35%", "50%", "65%", "85%"))
+
+for i in range(1,6):
+	column_n = 'column'+str(i)
+	avg1 = df2[column_n].mean()
+	std1 = df2[column_n].std()
+	max1 = df2[column_n].max()
+	min1 = df2[column_n].min()
+	qua1 = df2[column_n].quantile([0.15, 0.35, 0.5, 0.65, 0.85])
+	print("{:20s} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f}".format(column_n,  avg1, max1, min1, std1, qua1[0.15], qua1[0.35], qua1[0.5], qua1[0.65], qua1[0.85]))
+
+
+print(" ")
+print("NUMPY")
+print("{:20s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s} {:8.5s}".format(" ", "avg", "max", "min", "std", "15%", "35%", "50%", "65%", "85%"))
+
+
+for i in range(1, 6):
+	column_n = 'column' + str(i)
+	np_df2 = df2[column_n].to_numpy()
+	avg1 = np_df2.mean()
+	std1 = np_df2.std()
+	max1 = np_df2.max()
+	min1 = np_df2.min()
+	qua1 = np.quantile(np_df2,[0.15, 0.35, 0.5, 0.65, 0.85])
+	print("{:20s} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f} {:8.5f}".format(column_n, avg1, max1, min1, std1, qua1[0], qua1[1], qua1[2], qua1[3], qua1[4]))
