@@ -128,8 +128,7 @@ plt.clf()
 plt.figure(figsize=(10, 2))
 x = np.linspace(0, 1.0)
 y = np.cos(np.pi * 2 * x) ** 2
-plt.plot(x, y, marker='x', markersize=8, linestyle=':', linewidth=3, color='g',
-         label='$\cos^2(\pi x)$')  # 라벨은 LaTex 서식으로 쓰임
+plt.plot(x, y, marker='x', markersize=8, linestyle=':', linewidth=3, color='g', label='$\cos^2(\pi x)$')  # 라벨은 LaTex 서식으로 쓰임
 plt.legend(loc='lower right')
 plt.xlabel('input')
 plt.ylabel('output')
@@ -311,8 +310,7 @@ df2.plot.barh(stacked=True)
 plt.savefig(r"images/ex28.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
 
-df3 = pd.DataFrame({'a': np.random.randn(500) + 1, 'b': np.random.randn(500), 'c': np.random.randn(500) - 1},
-                   columns=['a', 'b', 'c'])
+df3 = pd.DataFrame({'a': np.random.randn(500) + 1, 'b': np.random.randn(500), 'c': np.random.randn(500) - 1}, columns=['a', 'b', 'c'])
 
 df3.plot.hist(alpha=0.5)
 # plt.show()
