@@ -1,14 +1,40 @@
 import matplotlib.pyplot as plt
 from matplotlib import rc, font_manager  # 한글 출력하기
 import numpy as np
+import os  # 코드 실행 결과 저장할 폴더 있는지 확인하고, 없으면 만들기 위해 import
 
-# 한글 출력하기
+# matplotlib 그래프에 한글 출력하기 : 안 하면 네모 박스로 나옴
+# 교수님이 써주신 코드이니 이런 게 있다는 사실은 기억해두는 게 좋다.
 font_path = "c:/Windows/Fonts/HANDotum.ttf"  # 함초롬돋움
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
 
-# Matplotlib 이미지 저장하기
-# https://codetorial.net/matplotlib/savefig.html
+# 코드 실행 결과가 저장될 폴더가 없다면 하나 만들어준다
+# 수업시간에 배운 내용 아님
+# 파이참으로 실행하는 것을 전제로 하는 코드이며,
+# 다른 프로그램으로 실행할 경우 의도하지 않은 곳에 폴더가 생성될 수 있으니
+# 확인 후 경로를 수정해도 좋고(이 코드만 따로 떼서 실행하면 빈 폴더가 생성되기 때문에 잘못 만들었다면 바로 지우면 된다)
+# 파이참으로 바로 실행해도 된다.
+if not os.path.exists("images/"):
+	os.mkdir("images/")
+
+"""
+Matplotlib 이미지 저장하기 참고 : https://codetorial.net/matplotlib/savefig.html
+수업시간에 배운 거 아니고 보기 좋게 저장하기 위해 찾아본 것이니 신경쓰지 않아도 무방
+각 예제는 01번부터 50번까지 총 51개의 이미지로 저장된다. 07번이 2개 있다.
+한번에 모두 실행하면 시간이 오래 걸리므로 나눠서 실행해도 된다.
+이미지를 저장하지 않으려면 savefig와 clf가 있는 줄을 주석처리하고
+	show를 주석 해제하면 각 실행 결과가 일일이 창으로 뜬다.
+savefig 이후에 clf를 쓰는 이유는 savefig만으로는 먼저 그려두었던 figure가 사라지지 않아서
+	뒤로 갈수록 그래프가 합쳐져 원치 않는 결과가 되기 때문이다.
+	clf는 현재 그려둔 figure를 지우는 코드이다.
+"""
+
+"""
+수업 내내 데이터 시각화의 중요성을 강조하셨다.
+어디 가서 발표할 일이 있을 때 열 줄 글보다 한 장의 그래프가 훨씬 보기 좋다며
+	필요할 때 여기서 찾아 쓰라고 예제를 자세히 써주셨다.
+"""
 
 y = (16, 9, 4, 1, 0, 1, 4, 9, 16)
 plt.plot(y, 'b')
@@ -19,7 +45,7 @@ plt.xlabel('입력')
 plt.savefig(r"images/ex01.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
 
-plt.plot([1, 3, 7, 11, 14, 15])  # distance
+plt.plot([1, 3, 7, 11, 14, 15])
 plt.xlabel('time[min]')
 plt.ylabel('distance[km]')
 # plt.show()
@@ -145,7 +171,7 @@ plt.legend(loc='lower right')
 plt.xlabel('input')
 plt.ylabel('output')
 plt.title('Experiment Result')
-# plt.savefig('func_plot.jpg')
+# plt.savefig('func_plot.jpg')  # 이 예제는 원래 savefig 실습하는 예제였다. 파일명이 달라지면 이미지 정리에 방해돼서 실행하지 않았음.
 plt.savefig(r"images/ex13.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
 
@@ -184,6 +210,8 @@ plt.clf()
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.axes3d import Axes3D
+# 16번부터 18번 예제는 3D 예제이므로 가능하다면 꼭 한번 plt.show()로 실행해보기 바란다.
+# 저장된 이미지는 상호작용할 수 없지만 plt.show()로 뜨는 이미지는 이리저리 돌려볼 수 있다.
 
 fig = plt.figure(figsize=(10, 5))
 axis = fig.add_axes([0.1, 0.1, 0.8, 0.8], projection='3d')
