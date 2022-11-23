@@ -1,0 +1,13 @@
+lr.py 실행 시간 : 2022-11-23 13:40:56
+
+비만 데이터셋으로 선형 회귀
+
+type(diabetes_X) : <class 'numpy.ndarray'>
+diabetes_X.shape : (442, 10)
+diabetes_y.shape : (442,)
+특징 추출 이후 diabetes_X.shape : (442, 1)
+
+Coefficients: [938.23786125]
+Mean squared error 1: 2548.07
+Mean squared error 2: 0.15
+Coefficient of determination(r2_score): 0.47

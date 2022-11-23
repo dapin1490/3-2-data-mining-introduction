@@ -1,0 +1,47 @@
+nb.py 실행 시간 : 2022-11-23 13:38:00
+
+나이브 베이즈 실습
+나이브 베이즈가 종류가 많은데 대체로 가우시안 나이브 베이즈 쓴다고 알고 있으면 된다.
+
+Number of mislabeled points out of a total 75 points : 4
+
+-----
+
+번외편
+
+test_size = 0.1
+Number of mislabeled points out of a total 15 points : 1
+correct rate : 0.93
+
+test_size = 0.2
+Number of mislabeled points out of a total 30 points : 1
+correct rate : 0.97
+
+test_size = 0.3
+Number of mislabeled points out of a total 45 points : 0
+correct rate : 1.00
+
+test_size = 0.4
+Number of mislabeled points out of a total 60 points : 4
+correct rate : 0.93
+
+test_size = 0.5
+Number of mislabeled points out of a total 75 points : 4
+correct rate : 0.95
+
+test_size = 0.6
+Number of mislabeled points out of a total 90 points : 5
+correct rate : 0.94
+
+test_size = 0.7
+Number of mislabeled points out of a total 105 points : 7
+correct rate : 0.93
+
+test_size = 0.8
+Number of mislabeled points out of a total 120 points : 8
+correct rate : 0.93
+
+test_size = 0.9
+Number of mislabeled points out of a total 135 points : 7
+correct rate : 0.95
+

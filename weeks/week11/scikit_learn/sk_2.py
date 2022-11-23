@@ -38,8 +38,8 @@ print("Coefficient of determination: %.2f" % r2_score(diabetes_y_test, diabetes_
 
 with open("res/sk_2_result.txt", "w") as f:
 	f.write(f"Coefficients: {regr.coef_}\n")
-	f.write(f"Mean squared error: {mean_squared_error(diabetes_y_test, diabetes_y_pred) :2f}\n")
-	f.write(f"Coefficient of determination: {r2_score(diabetes_y_test, diabetes_y_pred) :2f}")
+	f.write(f"Mean squared error: {mean_squared_error(diabetes_y_test, diabetes_y_pred) :.2f}\n")
+	f.write(f"Coefficient of determination: {r2_score(diabetes_y_test, diabetes_y_pred) :.2f}")
 
 # Plot outputs
 plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
