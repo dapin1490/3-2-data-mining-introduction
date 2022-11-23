@@ -36,6 +36,11 @@ print("Mean squared error: %.2f" % mean_squared_error(diabetes_y_test, diabetes_
 # The coefficient of determination: 1 is perfect prediction
 print("Coefficient of determination: %.2f" % r2_score(diabetes_y_test, diabetes_y_pred))
 
+with open("res/sk_2_result.txt", "w") as f:
+	f.write(f"Coefficients: {regr.coef_}\n")
+	f.write(f"Mean squared error: {mean_squared_error(diabetes_y_test, diabetes_y_pred) :2f}\n")
+	f.write(f"Coefficient of determination: {r2_score(diabetes_y_test, diabetes_y_pred) :2f}")
+
 # Plot outputs
 plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
 plt.plot(diabetes_X_test, diabetes_y_pred, color="blue", linewidth=3)
@@ -43,4 +48,8 @@ plt.plot(diabetes_X_test, diabetes_y_pred, color="blue", linewidth=3)
 plt.xticks(())
 plt.yticks(())
 
-plt.show()
+# plt.show()
+plt.savefig(r"res/scikit02.png", facecolor='#dddddd', bbox_inches='tight')
+plt.clf()
+print("res/scikit02.png")
+
