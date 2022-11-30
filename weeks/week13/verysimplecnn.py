@@ -6,6 +6,20 @@ from keras.layers import Conv2D, MaxPooling2D
 import numpy as np
 import time
 
+"""
+# 캐글 버전 import
+
+import tensorflow as tf
+import keras
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Conv2D, MaxPooling2D
+from keras.utils.np_utils import to_categorical
+import numpy as np
+import time
+"""
+
 res = open(r"weeks\week13\res\verysimplecnn_result.txt", 'w')
 
 print(f"verysimplecnn.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(time.time()))}")
@@ -46,7 +60,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 # 시퀀셜 형태로 계층 연결
 model = Sequential()
 # 2D 컨볼루션 2번, 맥스 풀링, 드롭아웃, 플래튼(2D -> 1D), 은닉층 구성, 드롭아웃, 결과값 출력 위한 은닉층 구성
-model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28,28,1)))
+model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))
 model.add(Conv2D(64, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
