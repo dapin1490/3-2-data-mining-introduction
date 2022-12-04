@@ -20,7 +20,9 @@ import numpy as np
 import time
 """
 
-res = open(r"weeks\week13\res\verysimplecnn_result.txt", 'w')
+# 실행 시간이 너무 오래 걸려서 캐글 GPU로 실행했었음
+
+res = open(r"weeks\week13+hw\res\verysimplecnn_result.txt", 'w')
 
 print(f"verysimplecnn.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(time.time()))}")
 res.write(f"verysimplecnn.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(time.time()))}\n\n")

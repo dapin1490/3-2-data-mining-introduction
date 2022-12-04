@@ -48,6 +48,6 @@ plt.scatter(X_filtered[:, 0], X_filtered[:, 1], c=y_pred)
 plt.title("Unevenly Sized Blobs")
 
 # plt.show()
-plt.savefig(r"weeks\week13\res\kmean_image.png", facecolor='#dddddd', bbox_inches='tight')
+plt.savefig(r"weeks\week13+hw\res\kmean_image.png", facecolor='#dddddd', bbox_inches='tight')
 plt.clf()
-print(r"weeks\week13\res\kmean_image.png")
+print(r"weeks\week13+hw\res\kmean_image.png")

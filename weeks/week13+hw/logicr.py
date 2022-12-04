@@ -3,7 +3,7 @@ from sklearn.datasets import load_iris  # 데이터 로드
 from sklearn.linear_model import LogisticRegression  # 모델 로드
 import time
 
-res = open("weeks/week13/res/logicr_result.txt", 'w')
+res = open("weeks/week13+hw/res/logicr_result.txt", 'w')
 
 print(f"logicr.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(time.time()))}")
 res.write(f"logicr.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(time.time()))}\n\n")
