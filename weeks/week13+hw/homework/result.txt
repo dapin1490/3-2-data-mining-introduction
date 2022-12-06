@@ -1,0 +1,23 @@
+assignment4.py 실행 시간 : 2022-12-06 15:12:01
+
+----- 몸무게 -----
+KNN : 0.8222
+Logistic Regression : 0.8222
+Neural Network : 0.8400
+
+----- 키 -----
+KNN : 0.9467
+Logistic Regression : 0.9422
+Neural Network : 0.9333
+
+----- 수축기 -----
+KNN : 0.5867
+Logistic Regression : 0.5956
+Neural Network : 0.6222
+
+----- 이완기 -----
+KNN : 0.6000
+Logistic Regression : 0.5822
+Neural Network : 0.5556
+
+코드 실행 시간 : 37.591초

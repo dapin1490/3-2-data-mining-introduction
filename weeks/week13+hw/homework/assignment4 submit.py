@@ -13,16 +13,8 @@ from keras.models import Sequential  # Neural Network
 from keras.layers import Dense, Dropout, BatchNormalization  # Neural Network
 from sklearn import metrics  # 정확도 계산
 from sklearn.model_selection import train_test_split  # 학습셋 분리
-import time
 
 global seed
-
-# res = open(r"weeks\week13+hw\homework\result.txt", 'w')  # vscode
-res = open(r"result.txt", 'w')  # pycharm
-
-start_time = time.time()
-print(f"assignment4.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(start_time))}\n\n")
-res.write(f"assignment4.py 실행 시간 : {time.strftime('%Y-%m-%d %X', time.localtime(start_time))}\n\n")
 
 
 def knn(_key, _data):  # "weeks\week12\sk_3.py" 참고
@@ -70,12 +62,11 @@ def neu_net(_key, _data, _num_classes, _batch=128, _epoch=50):  # "weeks\week13+
     model.add(Dense(num_classes, activation='softmax'))
 
     model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
-    model.fit(x_tr, y_tr, batch_size=batch_size, epochs=epochs, validation_split=0.2, verbose=1)
-    return model.evaluate(x_te, y_te, verbose=1)[1]
+    model.fit(x_tr, y_tr, batch_size=batch_size, epochs=epochs, validation_split=0.2, verbose=0)
+    return model.evaluate(x_te, y_te, verbose=0)[1]
 
 
-# data = pd.read_csv(r"weeks\week13+hw\homework\student_health_3.csv", header=0, encoding='euc-kr')  # vscode
-data = pd.read_csv(r"student_health_3.csv", header=0, encoding='euc-kr')  # pycharm
+data = pd.read_csv(r"student_health_3.csv", header=0, encoding='euc-kr')
 data = data[["몸무게", "키", "수축기", "이완기", "학년"]]
 
 seed = 221204  # 랜덤 시드 지정
@@ -84,6 +75,7 @@ tf.random.set_seed(seed)
 # 몸무게, 키 : 전학년 다 있음
 # 수축기, 이완기 : 1, 4학년만 있음
 # 정수로 구분된 클래스의 숫자가 연속하지 않을 경우 0부터 최댓값까지 원 핫 인코딩하므로 클래스 최댓값 + 1로 사용해야 함
+# 데이터, 원 핫 인코딩 수, DNN용 epoch 수
 data_dict = {"몸무게": (data[["몸무게", "학년"]], 6, 43),
             "키": (data[["키", "학년"]], 6, 41),
             "수축기": (data[["수축기", "학년"]], 5, 45),
@@ -91,15 +83,7 @@ data_dict = {"몸무게": (data[["몸무게", "학년"]], 6, 43),
 
 for key in data_dict.keys():
     print(f"----- {key} -----")
-    res.write(f"----- {key} -----\n")
-    res.write(f"KNN : {knn(key, data_dict[key][0]) :.4f}\n")
-    res.write(f"Logistic Regression : {logic_reg(key, data_dict[key][0]) :.4f}\n")
-    res.write(f"Neural Network : {neu_net(key, data_dict[key][0], data_dict[key][1], _epoch=data_dict[key][2]) :.4f}\n")
+    print(f"KNN : {knn(key, data_dict[key][0]) :.4f}")
+    print(f"Logistic Regression : {logic_reg(key, data_dict[key][0]) :.4f}")
+    print(f"Neural Network : {neu_net(key, data_dict[key][0], data_dict[key][1], _epoch=data_dict[key][2]) :.4f}")
     print()
-    res.write("\n")
-
-end_time = time.time()
-print(f"코드 실행 시간 : {end_time - start_time :.3f}초")
-res.write(f"코드 실행 시간 : {end_time - start_time :.3f}초\n")
-
-res.close()
