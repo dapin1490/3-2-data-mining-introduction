@@ -1,0 +1,7 @@
+assignment4.py 실행 시간 : 2022-12-07 12:26:26
+
+KNN accuracy : 0.9289
+Logistic Regression accuracy : 0.9244
+Neural Network accuracy : 0.9111
+
+코드 실행 시간 : 7.261초
