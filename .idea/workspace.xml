@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="011d14d1-a15a-4b4d-9224-a8fcb2151a47" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/weeks/week13+hw/homework/assignment4_2 submit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weeks/week13+hw/homework/assignment4_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weeks/week13+hw/homework/result_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weeks/week14/note.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weeks/week13+hw/homework/assignment4_2 submit.py" beforeDir="false" afterPath="$PROJECT_DIR$/weeks/week13+hw/homework/assignment4_2 submit.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

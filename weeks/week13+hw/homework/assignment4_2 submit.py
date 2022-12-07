@@ -5,12 +5,12 @@
 """
 
 import pandas as pd
-import tensorflow as tf  # Neural Network
+# import tensorflow as tf  # Neural Network
 from keras.utils.np_utils import to_categorical
 from sklearn import neighbors  # KNN
 from sklearn.linear_model import LogisticRegression  # Logistic Regression
-# from keras.models import Sequential  # Neural Network
-# from keras.layers import Dense, Dropout, BatchNormalization  # Neural Network
+from keras.models import Sequential  # Neural Network
+from keras.layers import Dense, Dropout, BatchNormalization  # Neural Network
 from sklearn import metrics  # 정확도 계산
 from sklearn.model_selection import train_test_split  # 학습셋 분리
 
@@ -45,22 +45,33 @@ def neu_net(_key, _data, _num_classes, _batch=128, _epoch=50):  # "weeks\week13+
     batch_size = _batch
     epochs = _epoch
 
+    input_size = len(_data.drop(_key, axis=1).columns)
     x = _data.drop(_key, axis=1).to_numpy()
     y = _data[_key].to_numpy().ravel()
     y = to_categorical(y, num_classes)
     x_tr, x_te, y_tr, y_te = train_test_split(x, y, test_size=0.2, random_state=seed)
 
-    model = tf.keras.Sequential([
-        tf.keras.layers.Dense(1024, activation="relu"),
-        tf.keras.layers.Dense(512, activation="relu"),
-        tf.keras.layers.Dropout(0.3),
-        tf.keras.layers.Dense(256, activation="relu"),
-        tf.keras.layers.BatchNormalization(),
-        tf.keras.layers.Dense(128, activation="relu"),
-        tf.keras.layers.Dropout(0.3),
-        tf.keras.layers.Dense(64, activation="relu"),
-        tf.keras.layers.Dense(num_classes, activation='softmax')
-    ])
+    model = Sequential()
+    model.add(Dense(1024, input_dim=input_size, activation="relu"))
+    model.add(Dense(512, activation="relu"))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation="relu"))
+    model.add(BatchNormalization())
+    model.add(Dense(128, activation="relu"))
+    model.add(Dropout(0.3))
+    model.add(Dense(64, activation="relu"))
+    model.add(Dense(num_classes, activation='softmax'))
+    # model = tf.keras.Sequential([
+    #     tf.keras.layers.Dense(1024, activation="relu"),
+    #     tf.keras.layers.Dense(512, activation="relu"),
+    #     tf.keras.layers.Dropout(0.3),
+    #     tf.keras.layers.Dense(256, activation="relu"),
+    #     tf.keras.layers.BatchNormalization(),
+    #     tf.keras.layers.Dense(128, activation="relu"),
+    #     tf.keras.layers.Dropout(0.3),
+    #     tf.keras.layers.Dense(64, activation="relu"),
+    #     tf.keras.layers.Dense(num_classes, activation='softmax')
+    # ])
 
     model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
     model.fit(x_tr, y_tr, batch_size=batch_size, epochs=epochs, validation_split=0.2, verbose=0)
@@ -73,7 +84,7 @@ key = "학년"
 # print(data.info())
 
 seed = 221204  # 랜덤 시드 지정
-tf.random.set_seed(seed)
+# tf.random.set_seed(seed)
 
 # 1, 4학년만 있음
 # 정수로 구분된 클래스의 숫자가 연속하지 않을 경우 0부터 최댓값까지 원 핫 인코딩하므로 클래스 최댓값 + 1로 사용해야 함
