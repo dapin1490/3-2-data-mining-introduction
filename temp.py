@@ -27,15 +27,19 @@ rc('font', family=font_name)
 # plt.ylabel("Counts")
 # plt.show()
 
-# data = sns.load_dataset('tips')
-# # plt.figure(figsize=(13, 10))   # 그래프의 크기를 정합니다.
-# # 그래프의 속성을 결정합니다. vmax의 값을 0.5로 지정해 0.5에 가까울 수록 밝은 색으로 표시되게 합니다.
-# # sns.heatmap(data.corr(), linewidths=0.1, vmax=1, annot=True, cmap="YlGnBu")
+# 참고 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=wideeyed&logNo=221347221214
+data = pd.read_csv(r"weeks\week10+hw\homework\data\student_health_2.csv", encoding="euc-kr", header=0)
+data = data[["몸무게", "키", "학년"]].drop_duplicates(["몸무게"])
+print(data.info())
+heat = data.pivot("학년", "몸무게", "키")
+# 그래프의 속성을 결정합니다. vmax의 값을 0.5로 지정해 0.5에 가까울 수록 밝은 색으로 표시되게 합니다.
+# sns.heatmap(data.corr(), linewidths=0.1, vmax=1, annot=True, cmap="YlGnBu")
 # sns.heatmap(data.corr())
-# plt.show()
+sns.heatmap(heat)
+plt.show()
 
-data = pd.read_csv(r"weeks\week13+hw\homework\student_health_3.csv", encoding="euc-kr", header=0)
-data = data[["몸무게", "키", "수축기", "이완기", "학년"]]
+# data = pd.read_csv(r"weeks\week13+hw\homework\student_health_3.csv", encoding="euc-kr", header=0)
+# data = data[["몸무게", "키", "수축기", "이완기", "학년"]]
 # print(data.info())
 # print(data.corr())
 # sns.heatmap(data.corr())
@@ -46,15 +50,15 @@ data = data[["몸무게", "키", "수축기", "이완기", "학년"]]
 # plt.ylabel("Counts")
 # plt.show()
 
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d.axes3d import Axes3D
+# import matplotlib.pyplot as plt
+# from mpl_toolkits.mplot3d.axes3d import Axes3D
 # 16번부터 18번 예제는 3D 예제이므로 가능하다면 꼭 한번 plt.show()로 실행해보기 바란다.
 # 저장된 이미지는 상호작용할 수 없지만 plt.show()로 뜨는 이미지는 이리저리 돌려볼 수 있다.
 
-fig = plt.figure(figsize=(10, 5))
-axis = fig.add_axes([0.1, 0.1, 0.8, 0.8], projection='3d')
+# fig = plt.figure(figsize=(10, 5))
+# axis = fig.add_axes([0.1, 0.1, 0.8, 0.8], projection='3d')
 
-import numpy as np
+# import numpy as np
 
 # t = np.linspace(0.0, 5.0, 500)
 # x = np.cos(np.pi * t)
@@ -66,14 +70,14 @@ import numpy as np
 # axis.set_zlabel('z-axis')
 # plt.show()
 
-x = data["몸무게"]
-y = data["키"]
-z = data["학년"]
-axis.scatter(x, y, z)  # 산점도
-axis.set_xlabel('x-몸무게')
-axis.set_ylabel('y-키')
-axis.set_zlabel('z-학년')
-plt.show()
+# x = data["몸무게"]
+# y = data["키"]
+# z = data["학년"]
+# axis.scatter(x, y, z)  # 산점도
+# axis.set_xlabel('x-몸무게')
+# axis.set_ylabel('y-키')
+# axis.set_zlabel('z-학년')
+# plt.show()
 
 # fig = plt.figure(figsize=(10, 5))
 # axis = fig.add_axes([0.1, 0.1, 0.8, 0.8], projection='3d')
