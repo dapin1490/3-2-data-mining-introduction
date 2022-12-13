@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 
-x = pd.read_csv("student_health_3.csv", encoding="CP949")
+x = pd.read_csv(r"weeks\week13+hw\homework\student_health_3.csv", encoding="CP949")
 
 year = x["학년"]
 input_data = np.array([x["키"], x["몸무게"], x["수축기"], x["이완기"]]).T
